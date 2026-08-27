@@ -1,0 +1,559 @@
+/* =========================================================
+   SETTINGS PAGE
+========================================================= */
+
+.settings-page {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   SETTINGS CARD
+========================================================= */
+
+.settings-card {
+    background: #ffffff;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 14px;
+
+    padding: 25px;
+}
+
+.settings-card-header {
+    margin-bottom: 22px;
+}
+
+.settings-card-header h2 {
+    font-size: 21px;
+
+    margin-bottom: 5px;
+}
+
+.settings-card-header p {
+    font-size: 13px;
+
+    color: #777777;
+}
+
+
+/* =========================================================
+   SETTINGS GROUP
+========================================================= */
+
+.settings-group {
+    margin-bottom: 22px;
+}
+
+.settings-group:last-child {
+    margin-bottom: 0;
+}
+
+.settings-group h3 {
+    font-size: 14px;
+
+    margin-bottom: 11px;
+}
+
+
+/* =========================================================
+   THEME GRID
+========================================================= */
+
+.theme-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.theme-option {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 10px;
+
+    background: #fafafa;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.theme-option:hover {
+    border-color: #999999;
+}
+
+.theme-option input {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+.theme-option strong {
+    font-size: 12px;
+
+    text-align: center;
+}
+
+.theme-option:has(input:checked) {
+    border: 2px solid #222222;
+
+    padding: 9px;
+
+    box-shadow:
+        0 0 0 2px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   THEME PREVIEW
+========================================================= */
+
+.theme-preview {
+    height: 90px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    border-radius: 7px;
+
+    border: 1px solid #dddddd;
+}
+
+.preview-sidebar {
+    width: 25%;
+
+    flex-shrink: 0;
+}
+
+.preview-content {
+    flex: 1;
+
+    padding: 10px;
+}
+
+.preview-card {
+    height: 28px;
+
+    border-radius: 5px;
+
+    margin-bottom: 7px;
+}
+
+.preview-card.small {
+    width: 70%;
+
+    height: 18px;
+}
+
+
+/* =========================================================
+   LIGHT PREVIEW
+========================================================= */
+
+.light-preview {
+    background: #f4f5f7;
+}
+
+.light-preview .preview-sidebar {
+    background: #ffffff;
+}
+
+.light-preview .preview-content {
+    background: #f4f5f7;
+}
+
+.light-preview .preview-card {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   DARK PREVIEW
+========================================================= */
+
+.dark-preview {
+    background: #111111;
+}
+
+.dark-preview .preview-sidebar {
+    background: #181818;
+}
+
+.dark-preview .preview-content {
+    background: #111111;
+}
+
+.dark-preview .preview-card {
+    background: #242424;
+}
+
+
+/* =========================================================
+   OCEAN PREVIEW
+========================================================= */
+
+.ocean-preview {
+    background: #eaf7fb;
+}
+
+.ocean-preview .preview-sidebar {
+    background: #0f4c5c;
+}
+
+.ocean-preview .preview-content {
+    background: #eaf7fb;
+}
+
+.ocean-preview .preview-card {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   FOREST PREVIEW
+========================================================= */
+
+.forest-preview {
+    background: #edf5ef;
+}
+
+.forest-preview .preview-sidebar {
+    background: #285943;
+}
+
+.forest-preview .preview-content {
+    background: #edf5ef;
+}
+
+.forest-preview .preview-card {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   PURPLE PREVIEW
+========================================================= */
+
+.purple-preview {
+    background: #f3effb;
+}
+
+.purple-preview .preview-sidebar {
+    background: #5f3b8f;
+}
+
+.purple-preview .preview-content {
+    background: #f3effb;
+}
+
+.purple-preview .preview-card {
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   MIDNIGHT PREVIEW
+========================================================= */
+
+.midnight-preview {
+    background: #0d1726;
+}
+
+.midnight-preview .preview-sidebar {
+    background: #101c31;
+}
+
+.midnight-preview .preview-content {
+    background: #0d1726;
+}
+
+.midnight-preview .preview-card {
+    background: #1c2b40;
+}
+
+
+/* =========================================================
+   BACKGROUND OPTIONS
+========================================================= */
+
+.option-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+}
+
+.option-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 9px;
+
+    background: #fafafa;
+
+    cursor: pointer;
+}
+
+.option-card:hover {
+    border-color: #bbbbbb;
+}
+
+.option-card strong {
+    display: block;
+
+    font-size: 13px;
+
+    margin-bottom: 3px;
+}
+
+.option-card span {
+    display: block;
+
+    font-size: 11px;
+
+    color: #777777;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   SUB SETTINGS
+========================================================= */
+
+.sub-setting {
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 15px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 9px;
+
+    background: #fafafa;
+}
+
+.sub-setting.active {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.sub-setting label {
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+.sub-setting input[type="url"] {
+    width: 100%;
+
+    padding: 10px 11px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 8px;
+}
+
+.sub-setting input[type="url"]:focus {
+    outline: none;
+
+    border-color: #555555;
+}
+
+.sub-setting input[type="color"] {
+    width: 65px;
+
+    height: 40px;
+
+    padding: 2px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MODULE SETTINGS
+========================================================= */
+
+.module-settings {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.toggle-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 14px;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 9px;
+
+    background: #fafafa;
+
+    cursor: pointer;
+}
+
+.toggle-row > div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.toggle-row strong {
+    font-size: 13px;
+}
+
+.toggle-row span {
+    font-size: 11px;
+
+    color: #777777;
+}
+
+.toggle-row input {
+    width: 18px;
+
+    height: 18px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.settings-actions {
+    display: flex;
+
+    justify-content: flex-end;
+}
+
+.settings-actions button {
+    min-width: 150px;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+}
+
+.primary-button {
+    border: 1px solid #222222;
+
+    background: #222222;
+
+    color: #ffffff;
+}
+
+.primary-button:hover {
+    background: #333333;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.settings-message {
+    min-height: 20px;
+
+    font-size: 13px;
+
+    text-align: right;
+
+    color: #666666;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .theme-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .option-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-card {
+        padding: 18px;
+    }
+
+    .settings-actions {
+        justify-content: stretch;
+    }
+
+    .settings-actions button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .theme-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Personal Planner - Dashboard</title>
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/dashboard.css?v=2"
+    >
+
+    <link
+    rel="stylesheet"
+    href="/frontend/css/theme.css?v=1"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- ======================================================
+             SIDEBAR
+        ======================================================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>
+                    Personal Planner
+                </h2>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="/dashboard.html"
+                    class="nav-item"
+                >
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="/planner.html"
+                    class="nav-item"
+                >
+                    <span>📝</span>
+                    Planner
+                </a>
+
+
+                <a
+                    href="/dailyplanner.html"
+                    class="nav-item"
+                >
+                    <span>📅</span>
+                    Daily Planner
+                </a>
+
+
+                <a
+                    href="/jobtracker.html"
+                    class="nav-item"
+                >
+                    <span>💼</span>
+                    Job Tracker
+                </a>
+
+
+                <a
+                    href="/goals.html"
+                    class="nav-item"
+                >
+                    <span>🎯</span>
+                    Goals
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="/settings.html"
+                    class="nav-item"
+                >
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+
+                <button
+                    type="button"
+                    id="logout"
+                    class="nav-item logout-button"
+                >
+                    <span>🚪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ======================================================
+             MAIN CONTENT
+        ======================================================= -->
+
+        <main class="main-content">
+
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Good morning!
+                    </h1>
+
+                    <p>
+                        Here's your productivity overview.
+                    </p>
+
+                </div>
+
+
+                <div class="topbar-date">
+
+                    <span id="currentDate"></span>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==================================================
+                 OVERVIEW
+            =================================================== -->
+
+            <section class="overview-card">
+
+                <div class="overview-header">
+
+                    <div>
+
+                        <h2>
+                            Today's Overview
+                        </h2>
+
+                        <p>
+                            A quick look at everything that needs
+                            your attention.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="overview-grid">
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Today's Tasks
+                        </span>
+
+                        <strong id="todayCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Pending Tasks
+                        </span>
+
+                        <strong id="pendingCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Completed
+                        </span>
+
+                        <strong id="completedCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Overdue
+                        </span>
+
+                        <strong id="overdueCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Applications
+                        </span>
+
+                        <strong id="applicationCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Interviews
+                        </span>
+
+                        <strong id="interviewCount">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="overview-item">
+
+                        <span>
+                            Offers
+                        </span>
+
+                        <strong id="offerCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==================================================
+                 DASHBOARD GRID
+            =================================================== -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- MAIN -->
+
+                <div class="dashboard-main">
+
+
+                    <!-- PLANNER -->
+
+                    <article
+                        id="dashboardPlanner"
+                        class="module-card planner-module"
+                    >
+
+                        <div class="module-card-header">
+
+                            <div class="module-title">
+
+                                <div class="module-icon">
+                                    📝
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Planner
+                                    </h2>
+
+                                    <p>
+                                        Your tasks
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <a href="/planner.html">
+                                Open →
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            id="plannerPreviewTasks"
+                            class="planner-task-list"
+                        >
+                        </div>
+
+
+                        <div class="planner-summary">
+
+                            <div>
+
+                                <strong id="plannerTotal">
+                                    0
+                                </strong>
+
+                                <span>
+                                    Total
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong id="plannerPending">
+                                    0
+                                </strong>
+
+                                <span>
+                                    Pending
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong id="plannerOverdue">
+                                    0
+                                </strong>
+
+                                <span>
+                                    Overdue
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="/planner.html"
+                            class="planner-view-all"
+                        >
+                            View all tasks →
+                        </a>
+
+                    </article>
+
+
+                    <!-- JOB TRACKER -->
+
+                    <article
+                        id="dashboardJobTracker"
+                        class="module-card job-module"
+                    >
+
+                        <div class="module-card-header">
+
+                            <div class="module-title">
+
+                                <div class="module-icon">
+                                    💼
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Job Tracker
+                                    </h2>
+
+                                    <p>
+                                        Your applications
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <a href="/jobtracker.html">
+                                Open →
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            id="jobPreviewApplications"
+                            class="job-preview-list"
+                        >
+                        </div>
+
+
+                        <a
+                            href="/jobtracker.html"
+                            class="job-view-all"
+                        >
+                            View all applications →
+                        </a>
+
+                    </article>
+
+
+                    <!-- DAILY PLANNER -->
+
+                    <article
+                        id="dashboardDailyPlanner"
+                        class="module-card"
+                    >
+
+                        <div class="module-card-header">
+
+                            <div class="module-title">
+
+                                <div class="module-icon">
+                                    📅
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Daily Planner
+                                    </h2>
+
+                                    <p>
+                                        Today's schedule
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <a href="/dailyplanner.html">
+                                Open →
+                            </a>
+
+                        </div>
+
+
+                        <p class="module-description">
+                            Your scheduled activities for today.
+                        </p>
+
+
+                        <div
+                            id="dailyPreview"
+                            class="schedule-preview"
+                        >
+                        </div>
+
+
+                        <a
+                            href="/dailyplanner.html"
+                            class="module-view-all"
+                        >
+                            View full schedule →
+                        </a>
+
+                    </article>
+
+
+                    <!-- GOALS -->
+
+                    <article
+                        id="dashboardGoals"
+                        class="module-card"
+                    >
+
+                        <div class="module-card-header">
+
+                            <div class="module-title">
+
+                                <div class="module-icon">
+                                    🎯
+                                </div>
+
+
+                                <div>
+
+                                    <h2>
+                                        Goals & Learning
+                                    </h2>
+
+                                    <p>
+                                        Track your progress
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <a href="/goals.html">
+                                Open →
+                            </a>
+
+                        </div>
+
+
+                        <p class="module-description">
+                            Stay focused on your current goal.
+                        </p>
+
+
+                        <div class="goal-section">
+
+                            <div class="goal-header">
+
+                                <div>
+
+                                    <span id="currentGoal">
+                                        No active goal
+                                    </span>
+
+
+                                    <small id="goalMilestones">
+                                        No milestones
+                                    </small>
+
+                                </div>
+
+
+                                <strong id="goalProgress">
+                                    0%
+                                </strong>
+
+                            </div>
+
+
+                            <div class="progress-bar">
+
+                                <div
+                                    id="goalProgressBar"
+                                    class="progress-fill"
+                                ></div>
+
+                            </div>
+
+
+                            <div class="goal-deadline">
+
+                                <span>
+                                    Deadline:
+                                </span>
+
+                                <strong id="goalDeadline">
+                                    No deadline
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="/goals.html"
+                            class="module-view-all"
+                        >
+                            View all goals →
+                        </a>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+
+                <aside class="dashboard-side">
+
+
+                    <!-- TODAY'S TASKS -->
+
+                    <section class="side-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Today's Tasks
+                                </h2>
+
+                                <p>
+                                    Tasks that need attention today
+                                </p>
+
+                            </div>
+
+
+                            <a href="/planner.html">
+                                View →
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            id="todayTasks"
+                            class="task-list"
+                        >
+                        </div>
+
+                    </section>
+
+
+                    <!-- UPCOMING -->
+
+                    <section class="side-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Upcoming
+                                </h2>
+
+                                <p>
+                                    What's coming next
+                                </p>
+
+                            </div>
+
+
+                            <a href="/planner.html">
+                                View →
+                            </a>
+
+                        </div>
+
+
+                        <div
+                            id="upcomingTasks"
+                            class="task-list"
+                        >
+                        </div>
+
+                    </section>
+
+
+                    <!-- RECENT ACTIVITY -->
+
+                    <section class="side-panel">
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h2>
+                                    Recent Activity
+                                </h2>
+
+                                <p>
+                                    Your latest actions
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="recentActivity"
+                            class="activity-list"
+                        >
+
+                            <div class="empty-state">
+                                No recent activity.
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                </aside>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="/frontend/js/dashboard.js?v=2"></script>
+    <script src="/frontend/js/theme.js?v=1"></script>
+    <script src="/frontend/js/navigation.js?v=2"></script>
+    <script src="/frontend/js/authGuard.js?v=1"></script>
+
+</body>
+
+</html>

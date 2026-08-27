@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Personal Planner - Daily Planner</title>
+
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/dashboard.css?v=81"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/dailyplanner.css?v=81"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/theme.css?v=81"
+    >
+    
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- ==================================================
+             SIDEBAR
+        =================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>
+                    Personal Planner
+                </h2>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="/dashboard.html"
+                    class="nav-item"
+                >
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="/planner.html"
+                    class="nav-item"
+                >
+                    <span>📝</span>
+                    Planner
+                </a>
+
+
+                <a
+                    href="/dailyplanner.html"
+                    class="nav-item active"
+                >
+                    <span>📅</span>
+                    Daily Planner
+                </a>
+
+
+                <a
+                    href="/jobtracker.html"
+                    class="nav-item"
+                >
+                    <span>💼</span>
+                    Job Tracker
+                </a>
+
+
+                <a
+                    href="/goals.html"
+                    class="nav-item"
+                >
+                    <span>🎯</span>
+                    Goals
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="/settings.html"
+                    class="nav-item"
+                >
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+
+                <button
+                    type="button"
+                    id="logout"
+                    class="nav-item logout-button"
+                >
+                    <span>🚪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==================================================
+             MAIN CONTENT
+        =================================================== -->
+
+        <main class="main-content">
+
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Daily Planner
+                    </h1>
+
+                    <p>
+                        Plan and organize your schedule.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <section class="daily-planner">
+
+
+                <!-- ==================================================
+                     CALENDAR CONTROLS
+                =================================================== -->
+
+                <div class="calendar-controls">
+
+                    <button
+                        type="button"
+                        id="previousMonth"
+                    >
+                        ←
+                    </button>
+
+
+                    <h2 id="calendarMonth">
+                        August 2026
+                    </h2>
+
+
+                    <button
+                        type="button"
+                        id="nextMonth"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+
+                <!-- ==================================================
+                     CALENDAR
+                =================================================== -->
+
+                <section class="calendar-card">
+
+                    <div class="calendar-weekdays">
+
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
+
+                    </div>
+
+
+                    <div
+                        id="calendarDays"
+                        class="calendar-days"
+                    ></div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     ADD / EDIT SCHEDULE
+                =================================================== -->
+
+                <section class="schedule-form-card">
+
+
+                    <div class="form-header">
+
+                        <div>
+
+                            <h2 id="formTitle">
+                                Add Schedule
+                            </h2>
+
+
+                            <p id="selectedDateText">
+                                Create a schedule for the selected date.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="scheduleForm">
+
+
+                        <!-- START DATE -->
+
+                        <div class="form-group">
+
+                            <label for="startDate">
+                                Start Date
+                            </label>
+
+
+                            <input
+                                type="date"
+                                id="startDate"
+                                readonly
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- ACTIVITY -->
+
+                        <div class="form-group">
+
+                            <label for="title">
+                                Activity
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="title"
+                                placeholder="e.g. Dentist Appointment"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- START TIME -->
+
+                        <div class="form-group">
+
+                            <label for="startTime">
+                                Start Time
+                            </label>
+
+
+                            <input
+                                type="time"
+                                id="startTime"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- END DATE -->
+
+                        <div class="form-group">
+
+                            <label for="endDate">
+                                End Date
+                            </label>
+
+
+                            <input
+                                type="date"
+                                id="endDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- END TIME -->
+
+                        <div class="form-group">
+
+                            <label for="endTime">
+                                End Time
+                            </label>
+
+
+                            <input
+                                type="time"
+                                id="endTime"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- CATEGORY -->
+
+                        <div class="form-group">
+
+                            <label for="category">
+                                Category
+                            </label>
+
+
+                            <select id="category">
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                                <option value="work">
+                                    Work
+                                </option>
+
+                                <option value="study">
+                                    Study
+                                </option>
+
+                                <option value="personal">
+                                    Personal
+                                </option>
+
+                                <option value="health">
+                                    Health
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ==================================================
+                             REPEAT
+                        =================================================== -->
+
+                        <div class="form-group">
+
+                            <label for="recurrenceType">
+                                Repeat
+                            </label>
+
+
+                            <select id="recurrenceType">
+
+                                <option value="none">
+                                    Does not repeat
+                                </option>
+
+                                <option value="daily">
+                                    Daily
+                                </option>
+
+                                <option value="weekly">
+                                    Weekly
+                                </option>
+
+                                <option value="monthly">
+                                    Monthly
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ==================================================
+                             WEEKLY DAYS
+                        =================================================== -->
+
+                        <div
+                            class="form-group full-width"
+                            id="recurrenceDays"
+                            style="display: none;"
+                        >
+
+                            <label>
+                                Repeat on
+                            </label>
+
+
+                            <div class="recurrence-days">
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        value="0"
+                                    >
+
+                                    Sun
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        value="1"
+                                    >
+
+                                    Mon
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        value="2"
+                                    >
+
+                                    Tue
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        value="3"
+                                    >
+
+                                    Wed
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        value="4"
+                                    >
+
+                                    Thu
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        value="5"
+                                    >
+
+                                    Fri
+
+                                </label>
+
+
+                                <label>
+
+                                    <input
+                                        type="checkbox"
+                                        value="6"
+                                    >
+
+                                    Sat
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ==================================================
+                             REPEAT UNTIL
+                        =================================================== -->
+
+                        <div
+                            class="form-group"
+                            id="recurrenceEndDateGroup"
+                            style="display: none;"
+                        >
+
+                            <label for="recurrenceEndDate">
+                                Repeat Until
+                            </label>
+
+
+                            <input
+                                type="date"
+                                id="recurrenceEndDate"
+                            >
+
+                        </div>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="form-group full-width">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+
+                            <textarea
+                                id="description"
+                                placeholder="Add additional details..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- FORM ACTIONS -->
+
+                        <div class="form-actions full-width">
+
+                            <button
+                                type="submit"
+                                id="submitSchedule"
+                                class="primary-button"
+                            >
+                                Add Schedule
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="cancelEdit"
+                                class="secondary-button"
+                                style="display: none;"
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- ==================================================
+                     SCHEDULE LIST
+                =================================================== -->
+
+                <section class="schedule-section">
+
+
+                    <div class="schedule-section-header">
+
+                        <div>
+
+                            <h2 id="scheduleHeading">
+                                All Schedules
+                            </h2>
+
+
+                            <p id="scheduleDescription">
+                                Showing all of your schedules.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="scheduleFilters"
+                        class="schedule-filters"
+                    >
+
+                        <button
+                            type="button"
+                            id="showAllSchedules"
+                            class="schedule-filter active"
+                        >
+                            All
+                        </button>
+
+                    </div>
+
+
+                    <div id="scheduleList">
+
+                        <div class="empty-state">
+                            No schedules yet.
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ======================================================
+         SCRIPTS
+    ======================================================= -->
+
+    <script src="/frontend/js/theme.js?v=81"></script>
+
+    <script src="/frontend/js/dailyplanner.js?v=81"></script>
+
+    <script src="/frontend/js/navigation.js?v=81"></script>
+    <script src="/frontend/js/authGuard.js?v=1"></script>
+
+
+</body>
+
+</html>

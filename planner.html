@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Personal Planner</title>
+
+
+    <!-- GLOBAL DASHBOARD STYLES -->
+    <link
+        rel="stylesheet"
+        href="/frontend/css/dashboard.css?v=20"
+    >
+
+
+    <!-- PLANNER STYLES -->
+    <link
+        rel="stylesheet"
+        href="/frontend/css/planner.css?v=20"
+    >
+
+
+    <!-- THEME -->
+    <link
+        rel="stylesheet"
+        href="/frontend/css/theme.css?v=20"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="app-layout">
+
+
+        <!-- ==================================================
+             SIDEBAR
+        =================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>
+                    Personal Planner
+                </h2>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="/dashboard.html"
+                    class="nav-item"
+                >
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="/planner.html"
+                    class="nav-item active"
+                >
+                    <span>📝</span>
+                    Planner
+                </a>
+
+
+                <a
+                    href="/dailyplanner.html"
+                    class="nav-item"
+                >
+                    <span>📅</span>
+                    Daily Planner
+                </a>
+
+
+                <a
+                    href="/jobtracker.html"
+                    class="nav-item"
+                >
+                    <span>💼</span>
+                    Job Tracker
+                </a>
+
+
+                <a
+                    href="/goals.html"
+                    class="nav-item"
+                >
+                    <span>🎯</span>
+                    Goals
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="/settings.html"
+                    class="nav-item"
+                >
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+
+                <button
+                    type="button"
+                    id="logout"
+                    class="nav-item logout-button"
+                >
+                    <span>🚪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==================================================
+             MAIN CONTENT
+        =================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Planner
+                    </h1>
+
+                    <p>
+                        Create, organize, and complete your tasks.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==================================================
+                 PLANNER
+            =================================================== -->
+
+            <div class="planner-container">
+
+
+                <!-- ==================================================
+                     CREATE TASK
+                =================================================== -->
+
+                <section class="create-section">
+
+                    <h1>
+                        Create Task
+                    </h1>
+
+
+                    <p class="create-description">
+                        Add a task to your planner.
+                    </p>
+
+
+                    <form id="taskForm">
+
+
+                        <!-- TITLE -->
+
+                        <div class="input-group">
+
+                            <label for="title">
+                                Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="title"
+                                placeholder="Enter task title"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DESCRIPTION -->
+
+                        <div class="input-group">
+
+                            <label for="description">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="description"
+                                placeholder="Enter task description"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- DUE DATE -->
+
+                        <div class="input-group">
+
+                            <label for="dueDate">
+                                Due Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="dueDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- PRIORITY -->
+
+                        <div class="input-group">
+
+                            <label for="priority">
+                                Priority
+                            </label>
+
+                            <select id="priority">
+
+                                <option value="low">
+                                    Low
+                                </option>
+
+                                <option
+                                    value="medium"
+                                    selected
+                                >
+                                    Medium
+                                </option>
+
+                                <option value="high">
+                                    High
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- CREATE -->
+
+                        <button
+                            type="submit"
+                            class="create-button"
+                        >
+                            Create Task
+                        </button>
+
+
+                        <!-- CANCEL EDIT -->
+
+                        <button
+                            type="button"
+                            id="cancelEdit"
+                            class="cancel-edit-button"
+                            style="display: none;"
+                        >
+                            Cancel
+                        </button>
+
+                    </form>
+
+                </section>
+
+
+                <!-- ==================================================
+                     TASKS
+                =================================================== -->
+
+                <section class="tasks-section">
+
+
+                    <!-- STATISTICS -->
+
+                    <div class="task-stats">
+
+
+                        <div
+                            class="stat-card"
+                            id="todayCard"
+                        >
+
+                            <h3>
+                                Today
+                            </h3>
+
+                            <p id="todayCount">
+                                0
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="stat-card"
+                            id="upcomingCard"
+                        >
+
+                            <h3>
+                                Upcoming
+                            </h3>
+
+                            <p id="upcomingCount">
+                                0
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="stat-card"
+                            id="overdueCard"
+                        >
+
+                            <h3>
+                                Overdue
+                            </h3>
+
+                            <p id="overdueCount">
+                                0
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="stat-card"
+                            id="totalCard"
+                        >
+
+                            <h3>
+                                Total
+                            </h3>
+
+                            <p id="totalTasks">
+                                0
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="stat-card"
+                            id="pendingCard"
+                        >
+
+                            <h3>
+                                Pending
+                            </h3>
+
+                            <p id="pendingCount">
+                                0
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="stat-card"
+                            id="completedCard"
+                        >
+
+                            <h3>
+                                Completed
+                            </h3>
+
+                            <p id="completedCount">
+                                0
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TASK HEADER -->
+
+                    <div class="tasks-header">
+
+                        <div>
+
+                            <h2>
+                                My Tasks
+                            </h2>
+
+                            <p>
+                                Manage your current tasks.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SEARCH -->
+
+                    <div class="task-tools">
+
+                        <input
+                            type="text"
+                            id="searchTask"
+                            placeholder="Search tasks..."
+                        >
+
+
+                        <select id="sortTasks">
+
+                            <option value="default">
+                                Default
+                            </option>
+
+                            <option value="dueSoonest">
+                                Due Soonest
+                            </option>
+
+                            <option value="dueLatest">
+                                Due Latest
+                            </option>
+
+                            <option value="newest">
+                                Newest
+                            </option>
+
+                            <option value="oldest">
+                                Oldest
+                            </option>
+
+                            <option value="priorityHigh">
+                                Priority: High → Low
+                            </option>
+
+                            <option value="priorityLow">
+                                Priority: Low → High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- FILTERS -->
+
+                    <div id="taskFilters">
+
+                        <button
+                            type="button"
+                            id="allTasks"
+                        >
+                            All
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="pendingTasks"
+                        >
+                            Pending
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="completedTasks"
+                        >
+                            Completed
+                        </button>
+
+                    </div>
+
+
+                    <!-- TASK LIST -->
+
+                    <div id="tasks">
+
+                        <!-- Tasks generated by planner.js -->
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script src="/frontend/js/theme.js?v=20"></script>
+
+    <script src="/frontend/js/planner.js?v=20"></script>
+
+    <script src="/frontend/js/navigation.js?v=20"></script>
+    <script src="/frontend/js/authGuard.js?v=1"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Personal Planner - Job Tracker
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/jobtracker.css?v=21"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/theme.css?v=21"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app-layout">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <h2>
+                Personal Planner
+            </h2>
+
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+            <a
+                href="/dashboard.html"
+                class="nav-item"
+            >
+                <span>⌂</span>
+                Dashboard
+            </a>
+
+
+            <a
+                href="/planner.html"
+                class="nav-item"
+            >
+                <span>📝</span>
+                Planner
+            </a>
+
+
+            <a
+                href="/dailyplanner.html"
+                class="nav-item"
+            >
+                <span>📅</span>
+                Daily Planner
+            </a>
+
+
+            <a
+                href="/jobtracker.html"
+                class="nav-item active"
+            >
+                <span>💼</span>
+                Job Tracker
+            </a>
+
+
+            <a
+                href="/goals.html"
+                class="nav-item"
+            >
+                <span>🎯</span>
+                Goals
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a
+                href="/settings.html"
+                class="nav-item"
+            >
+                <span>⚙</span>
+                Settings
+            </a>
+
+
+            <button
+                type="button"
+                id="logout"
+                class="nav-item logout-button"
+            >
+                <span>🚪</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>
+                    Job Tracker
+                </h1>
+
+                <p>
+                    Track your job applications and career progress.
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             JOB FORM
+        ================================================== -->
+
+        <section class="job-form-card">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Add Job Application
+                    </h2>
+
+                    <p>
+                        Keep track of every application you send.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <form id="jobForm">
+
+
+                <div class="form-grid">
+
+
+                    <!-- COMPANY -->
+
+                    <div class="input-group">
+
+                        <label for="company">
+                            Company
+                        </label>
+
+                        <input
+                            type="text"
+                            id="company"
+                            placeholder="Enter company name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- POSITION -->
+
+                    <div class="input-group">
+
+                        <label for="position">
+                            Position
+                        </label>
+
+                        <input
+                            type="text"
+                            id="position"
+                            placeholder="Enter position"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- APPLICATION DATE -->
+
+                    <div class="input-group">
+
+                        <label for="applicationDate">
+                            Application Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="applicationDate"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="input-group">
+
+                        <label for="status">
+                            Status
+                        </label>
+
+                        <select id="status">
+
+                            <option value="Applied">
+                                Applied
+                            </option>
+
+                            <option value="Under Review">
+                                Under Review
+                            </option>
+
+                            <option value="Interview">
+                                Interview
+                            </option>
+
+                            <option value="Assessment">
+                                Assessment
+                            </option>
+
+                            <option value="Rejected">
+                                Rejected
+                            </option>
+
+                            <option value="Offer">
+                                Offer
+                            </option>
+
+                            <option value="Withdrawn">
+                                Withdrawn
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- PRIORITY -->
+
+                    <div class="input-group">
+
+                        <label for="priority">
+                            Priority
+                        </label>
+
+                        <select id="priority">
+
+                            <option value="low">
+                                Low
+                            </option>
+
+                            <option
+                                value="medium"
+                                selected
+                            >
+                                Medium
+                            </option>
+
+                            <option value="high">
+                                High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- INTERVIEW DATE -->
+
+                    <div class="input-group">
+
+                        <label for="interviewDate">
+                            Interview Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="interviewDate"
+                        >
+
+                    </div>
+
+
+
+                    <!-- INTERVIEW TIME -->
+
+                    <div class="input-group">
+
+                        <label for="interviewTime">
+                            Interview Time
+                        </label>
+
+                        <input
+                            type="time"
+                            id="interviewTime"
+                        >
+
+                    </div>
+
+
+
+                    <!-- JOB URL -->
+
+                    <div class="input-group">
+
+                        <label for="jobUrl">
+                            Job URL
+                        </label>
+
+                        <input
+                            type="url"
+                            id="jobUrl"
+                            placeholder="https://..."
+                        >
+
+                    </div>
+
+
+
+                    <!-- INTERVIEW NOTES -->
+
+                    <div class="input-group full-width">
+
+                        <label for="interviewNotes">
+                            Interview Notes
+                        </label>
+
+                        <textarea
+                            id="interviewNotes"
+                            placeholder="Interview preparation, questions, interviewer notes..."
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- FOLLOW-UP DATE -->
+
+                    <div class="input-group">
+
+                        <label for="followUpDate">
+                            Follow-up Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="followUpDate"
+                        >
+
+                    </div>
+
+
+
+                    <!-- FOLLOW-UP STATUS -->
+
+                    <div class="input-group">
+
+                        <label for="followUpStatus">
+                            Follow-up Status
+                        </label>
+
+                        <select id="followUpStatus">
+
+                            <option value="Pending">
+                                Pending
+                            </option>
+
+                            <option value="Completed">
+                                Completed
+                            </option>
+
+                            <option value="Not Needed">
+                                Not Needed
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- FOLLOW-UP NOTES -->
+
+                    <div class="input-group full-width">
+
+                        <label for="followUpNotes">
+                            Follow-up Notes
+                        </label>
+
+                        <textarea
+                            id="followUpNotes"
+                            placeholder="What should you follow up about?"
+                        ></textarea>
+
+                    </div>
+
+
+
+                    <!-- GENERAL NOTES -->
+
+                    <div class="input-group full-width">
+
+                        <label for="notes">
+                            Notes
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            placeholder="Add notes about this application..."
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="create-button"
+                >
+                    Add Application
+                </button>
+
+
+                <button
+                    type="button"
+                    id="cancelEdit"
+                    class="cancel-button"
+                    style="display: none;"
+                >
+                    Cancel
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
+
+        <section class="job-stats">
+
+
+            <div class="stat-card">
+
+                <h3>
+                    Applications
+                </h3>
+
+                <p id="applicationCount">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>
+                    Interviews
+                </h3>
+
+                <p id="interviewCount">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>
+                    Offers
+                </h3>
+
+                <p id="offerCount">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>
+                    Rejected
+                </h3>
+
+                <p id="rejectedCount">
+                    0
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             APPLICATIONS
+        ================================================== -->
+
+        <section class="applications-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        My Applications
+                    </h2>
+
+                    <p>
+                        Your current job applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SEARCH + SORT -->
+
+            <div class="application-tools">
+
+                <input
+                    type="text"
+                    id="searchJob"
+                    placeholder="Search company or position..."
+                >
+
+
+                <select id="sortJobs">
+
+                    <option value="default">
+                        Default
+                    </option>
+
+                    <option value="newest">
+                        Newest
+                    </option>
+
+                    <option value="oldest">
+                        Oldest
+                    </option>
+
+                    <option value="company">
+                        Company A → Z
+                    </option>
+
+                    <option value="status">
+                        Status
+                    </option>
+
+                    <option value="interview">
+                        Interview Date
+                    </option>
+
+                    <option value="followup">
+                        Follow-up Date
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- FILTERS -->
+
+            <div id="jobFilters">
+
+                <button
+                    type="button"
+                    id="allJobs"
+                >
+                    All
+                </button>
+
+
+                <button
+                    type="button"
+                    id="appliedJobs"
+                >
+                    Applied
+                </button>
+
+
+                <button
+                    type="button"
+                    id="reviewJobs"
+                >
+                    Under Review
+                </button>
+
+
+                <button
+                    type="button"
+                    id="interviewJobs"
+                >
+                    Interview
+                </button>
+
+
+                <button
+                    type="button"
+                    id="offerJobs"
+                >
+                    Offers
+                </button>
+
+
+                <button
+                    type="button"
+                    id="rejectedJobs"
+                >
+                    Rejected
+                </button>
+
+            </div>
+
+
+
+            <div id="jobs">
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script src="/frontend/js/theme.js?v=21"></script>
+
+<script src="/frontend/js/jobtracker.js?v=21"></script>
+
+<script src="/frontend/js/navigation.js?v=21"></script>
+<script src="/frontend/js/authGuard.js?v=1"></script>
+
+</body>
+
+</html>

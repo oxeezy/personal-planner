@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Personal Planner - Goals</title>
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/goals.css"
+    >
+
+    <link
+    rel="stylesheet"
+    href="/frontend/css/theme.css?v=1"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>
+                    Personal Planner
+                </h2>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="/dashboard.html"
+                    class="nav-item"
+                >
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="/planner.html"
+                    class="nav-item"
+                >
+                    <span>📝</span>
+                    Planner
+                </a>
+
+
+                <a
+                    href="/dailyplanner.html"
+                    class="nav-item"
+                >
+                    <span>📅</span>
+                    Daily Planner
+                </a>
+
+
+                <a
+                    href="/jobtracker.html"
+                    class="nav-item"
+                >
+                    <span>💼</span>
+                    Job Tracker
+                </a>
+
+
+                <a
+                    href="/goals.html"
+                    class="nav-item"
+                >
+                    <span>🎯</span>
+                    Goals
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="/settings.html"
+                    class="nav-item"
+                >
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+
+                <button
+                    type="button"
+                    id="logout"
+                    class="nav-item logout-button"
+                >
+                    <span>🚪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-content">
+
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Goals & Learning
+                    </h1>
+
+                    <p>
+                        Track your goals and learning progress.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <section class="goals-page">
+
+
+                <!-- HEADER -->
+
+                <header class="goals-header">
+
+                    <div>
+
+                        <h2>
+                            My Goals
+                        </h2>
+
+                        <p>
+                            Keep track of what you're working toward.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="addGoalButton"
+                    >
+                        + Add Goal
+                    </button>
+
+                </header>
+
+
+                <!-- GOAL FORM -->
+
+                <section
+                    id="goalFormCard"
+                    class="goal-form-card"
+                >
+
+                    <div class="form-header">
+
+                        <div>
+
+                            <h2 id="formTitle">
+                                Add Goal
+                            </h2>
+
+                            <p>
+                                Create a new goal to track.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="goalForm">
+
+
+                        <div class="form-group">
+
+                            <label for="goalTitle">
+                                Goal
+                            </label>
+
+                            <input
+                                type="text"
+                                id="goalTitle"
+                                placeholder="e.g. Learn Node.js"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="goalCategory">
+                                Category
+                            </label>
+
+                            <select id="goalCategory">
+
+                                <option value="learning">
+                                    Learning
+                                </option>
+
+                                <option value="career">
+                                    Career
+                                </option>
+
+                                <option value="personal">
+                                    Personal
+                                </option>
+
+                                <option value="health">
+                                    Health
+                                </option>
+
+                                <option value="other">
+                                    Other
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="goalDeadline">
+                                Deadline
+                            </label>
+
+                            <input
+                                type="date"
+                                id="goalDeadline"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="goalProgress">
+                                Progress
+                            </label>
+
+                            <input
+                                type="number"
+                                id="goalProgress"
+                                min="0"
+                                max="100"
+                                value="0"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="goalStatus">
+                                Status
+                            </label>
+
+                            <select id="goalStatus">
+
+                                <option value="active">
+                                    Active
+                                </option>
+
+                                <option value="paused">
+                                    Paused
+                                </option>
+
+                                <option value="completed">
+                                    Completed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="goalDescription">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="goalDescription"
+                                placeholder="Describe what you want to achieve..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-actions full-width">
+
+                            <button
+                                type="submit"
+                                id="submitGoal"
+                                class="primary-button"
+                            >
+                                Add Goal
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="cancelGoal"
+                                class="secondary-button"
+                                style="display: none;"
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+
+                <!-- GOALS LIST -->
+
+                <section class="goals-section">
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <h2>
+                                My Goals
+                            </h2>
+
+                            <p>
+                                Your current goals and progress.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="goalsList"
+                        class="goals-list"
+                    >
+
+                        <div class="empty-state">
+                            No goals yet.
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ==================================================
+         SCRIPTS
+    =================================================== -->
+
+    <script src="/frontend/js/theme.js?v=20"></script>
+
+    <script src="/frontend/js/goals.js?v=10"></script>
+
+    <script src="/frontend/js/navigation.js?v=10"></script>
+    <script src="/frontend/js/authGuard.js?v=1"></script>
+
+</body>
+s
+</html>

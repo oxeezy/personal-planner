@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Personal Planner - Settings</title>
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/dashboard.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="/frontend/css/settings.css"
+    >
+    <link
+    rel="stylesheet"
+    href="/frontend/css/theme.css?v=1"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="app-layout">
+
+
+        <!-- ======================================================
+             SIDEBAR
+        ======================================================= -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+
+                <h2>
+                    Personal Planner
+                </h2>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a
+                    href="/dashboard.html"
+                    class="nav-item"
+                >
+                    <span>⌂</span>
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="/planner.html"
+                    class="nav-item"
+                >
+                    <span>📝</span>
+                    Planner
+                </a>
+
+
+                <a
+                    href="/dailyplanner.html"
+                    class="nav-item"
+                >
+                    <span>📅</span>
+                    Daily Planner
+                </a>
+
+
+                <a
+                    href="/jobtracker.html"
+                    class="nav-item"
+                >
+                    <span>💼</span>
+                    Job Tracker
+                </a>
+
+
+                <a
+                    href="/goals.html"
+                    class="nav-item"
+                >
+                    <span>🎯</span>
+                    Goals
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <a
+                    href="/settings.html"
+                    class="nav-item"
+                >
+                    <span>⚙</span>
+                    Settings
+                </a>
+
+
+                <button
+                    type="button"
+                    id="logout"
+                    class="nav-item logout-button"
+                >
+                    <span>🚪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ======================================================
+             MAIN CONTENT
+        ======================================================= -->
+
+        <main class="main-content">
+
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Settings
+                    </h1>
+
+                    <p>
+                        Customize your Personal Planner.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <section class="settings-page">
+
+
+                <!-- ==================================================
+                     APPEARANCE
+                =================================================== -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div>
+
+                            <h2>
+                                Appearance
+                            </h2>
+
+                            <p>
+                                Customize how your planner looks.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         THEMES
+                    =================================================== -->
+
+                    <div class="settings-group">
+
+                        <h3>
+                            Theme
+                        </h3>
+
+
+                        <div class="theme-grid">
+
+
+                            <!-- LIGHT -->
+
+                            <label class="theme-option">
+
+                                <input
+                                    type="radio"
+                                    name="theme"
+                                    value="light"
+                                    id="themeLight"
+                                >
+
+
+                                <div class="theme-preview light-preview">
+
+                                    <div class="preview-sidebar"></div>
+
+                                    <div class="preview-content">
+
+                                        <div class="preview-card"></div>
+
+                                        <div class="preview-card small"></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <strong>
+                                    Light
+                                </strong>
+
+                            </label>
+
+
+                            <!-- DARK -->
+
+                            <label class="theme-option">
+
+                                <input
+                                    type="radio"
+                                    name="theme"
+                                    value="dark"
+                                    id="themeDark"
+                                >
+
+
+                                <div class="theme-preview dark-preview">
+
+                                    <div class="preview-sidebar"></div>
+
+                                    <div class="preview-content">
+
+                                        <div class="preview-card"></div>
+
+                                        <div class="preview-card small"></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <strong>
+                                    Dark
+                                </strong>
+
+                            </label>
+
+
+                            <!-- OCEAN -->
+
+                            <label class="theme-option">
+
+                                <input
+                                    type="radio"
+                                    name="theme"
+                                    value="ocean"
+                                    id="themeOcean"
+                                >
+
+
+                                <div class="theme-preview ocean-preview">
+
+                                    <div class="preview-sidebar"></div>
+
+                                    <div class="preview-content">
+
+                                        <div class="preview-card"></div>
+
+                                        <div class="preview-card small"></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <strong>
+                                    Ocean
+                                </strong>
+
+                            </label>
+
+
+                            <!-- FOREST -->
+
+                            <label class="theme-option">
+
+                                <input
+                                    type="radio"
+                                    name="theme"
+                                    value="forest"
+                                    id="themeForest"
+                                >
+
+
+                                <div class="theme-preview forest-preview">
+
+                                    <div class="preview-sidebar"></div>
+
+                                    <div class="preview-content">
+
+                                        <div class="preview-card"></div>
+
+                                        <div class="preview-card small"></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <strong>
+                                    Forest
+                                </strong>
+
+                            </label>
+
+
+                            <!-- PURPLE -->
+
+                            <label class="theme-option">
+
+                                <input
+                                    type="radio"
+                                    name="theme"
+                                    value="purple"
+                                    id="themePurple"
+                                >
+
+
+                                <div class="theme-preview purple-preview">
+
+                                    <div class="preview-sidebar"></div>
+
+                                    <div class="preview-content">
+
+                                        <div class="preview-card"></div>
+
+                                        <div class="preview-card small"></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <strong>
+                                    Purple
+                                </strong>
+
+                            </label>
+
+
+                            <!-- MIDNIGHT -->
+
+                            <label class="theme-option">
+
+                                <input
+                                    type="radio"
+                                    name="theme"
+                                    value="midnight"
+                                    id="themeMidnight"
+                                >
+
+
+                                <div class="theme-preview midnight-preview">
+
+                                    <div class="preview-sidebar"></div>
+
+                                    <div class="preview-content">
+
+                                        <div class="preview-card"></div>
+
+                                        <div class="preview-card small"></div>
+
+                                    </div>
+
+                                </div>
+
+
+                                <strong>
+                                    Midnight
+                                </strong>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ==================================================
+                         BACKGROUND
+                    =================================================== -->
+
+                    <div class="settings-group">
+
+                        <h3>
+                            Background
+                        </h3>
+
+
+                        <div class="option-grid">
+
+
+                            <label class="option-card">
+
+                                <input
+                                    type="radio"
+                                    name="backgroundType"
+                                    value="default"
+                                >
+
+                                <div>
+
+                                    <strong>
+                                        Default
+                                    </strong>
+
+                                    <span>
+                                        Use the theme background
+                                    </span>
+
+                                </div>
+
+                            </label>
+
+
+                            <label class="option-card">
+
+                                <input
+                                    type="radio"
+                                    name="backgroundType"
+                                    value="color"
+                                >
+
+                                <div>
+
+                                    <strong>
+                                        Solid Color
+                                    </strong>
+
+                                    <span>
+                                        Choose a custom background
+                                    </span>
+
+                                </div>
+
+                            </label>
+
+
+                            <label class="option-card">
+
+                                <input
+                                    type="radio"
+                                    name="backgroundType"
+                                    value="image"
+                                >
+
+                                <div>
+
+                                    <strong>
+                                        Background Image
+                                    </strong>
+
+                                    <span>
+                                        Use an image URL
+                                    </span>
+
+                                </div>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- COLOR -->
+
+                    <div
+                        id="colorSettings"
+                        class="sub-setting"
+                    >
+
+                        <label for="backgroundColor">
+                            Background Color
+                        </label>
+
+
+                        <input
+                            type="color"
+                            id="backgroundColor"
+                            value="#f4f5f7"
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGE -->
+
+                    <div
+                        id="imageSettings"
+                        class="sub-setting"
+                    >
+
+                        <label for="backgroundImage">
+                            Background Image URL
+                        </label>
+
+
+                        <input
+                            type="url"
+                            id="backgroundImage"
+                            placeholder="https://example.com/image.jpg"
+                        >
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     DASHBOARD MODULES
+                =================================================== -->
+
+                <section class="settings-card">
+
+                    <div class="settings-card-header">
+
+                        <div>
+
+                            <h2>
+                                Dashboard Modules
+                            </h2>
+
+                            <p>
+                                Choose which modules appear on your dashboard.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="module-settings">
+
+
+                        <label class="toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Planner
+                                </strong>
+
+                                <span>
+                                    Task management
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="checkbox"
+                                id="showPlanner"
+                            >
+
+                        </label>
+
+
+                        <label class="toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Job Tracker
+                                </strong>
+
+                                <span>
+                                    Job applications and interviews
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="checkbox"
+                                id="showJobTracker"
+                            >
+
+                        </label>
+
+
+                        <label class="toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Daily Planner
+                                </strong>
+
+                                <span>
+                                    Daily scheduling
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="checkbox"
+                                id="showDailyPlanner"
+                            >
+
+                        </label>
+
+
+                        <label class="toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Goals
+                                </strong>
+
+                                <span>
+                                    Goals and learning progress
+                                </span>
+
+                            </div>
+
+
+                            <input
+                                type="checkbox"
+                                id="showGoals"
+                            >
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ==================================================
+                     SAVE
+                =================================================== -->
+
+                <div class="settings-actions">
+
+                    <button
+                        type="button"
+                        id="saveSettings"
+                        class="primary-button"
+                    >
+                        Save Settings
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="settingsMessage"
+                    class="settings-message"
+                ></div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="/frontend/js/settings.js"></script>
+    <script src="/frontend/js/theme.js?v=1"></script>
+    <script src="/frontend/js/navigation.js"></script>
+
+    <script src="/frontend/js/authGuard.js?v=1"></script>
+
+</body>
+
+</html>

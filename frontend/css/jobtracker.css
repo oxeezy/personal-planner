@@ -1,0 +1,1132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+    color: #222;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.app-layout {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+
+    background: #202020;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 15px;
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+.sidebar-logo {
+    padding: 0 10px 35px;
+}
+
+
+.sidebar-logo h2 {
+    font-size: 20px;
+}
+
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border-radius: 8px;
+
+    color: #ddd;
+
+    transition: 0.2s;
+}
+
+
+.nav-item:hover {
+    background: #2f2f2f;
+    color: white;
+}
+
+
+.nav-item.active {
+    background: #3a3a3a;
+    color: white;
+}
+
+
+.sidebar-bottom {
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.logout-button {
+    background: transparent;
+
+    border: none;
+
+    cursor: pointer;
+
+    font: inherit;
+
+    text-align: left;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    margin-left: 240px;
+
+    width: calc(100% - 240px);
+
+    padding: 30px;
+}
+
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+
+.page-header h1 {
+    font-size: 30px;
+
+    margin-bottom: 6px;
+}
+
+
+.page-header p {
+    color: #777;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.job-form-card {
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+}
+
+
+.section-header {
+    margin-bottom: 20px;
+}
+
+
+.section-header h2 {
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+
+.section-header p {
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 18px;
+}
+
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.input-group.full-width {
+    grid-column: 1 / -1;
+}
+
+
+.input-group label {
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+
+    padding: 11px 12px;
+
+    border:
+        1px solid #ccc;
+
+    border-radius: 7px;
+
+    font: inherit;
+
+    background: white;
+}
+
+
+.input-group textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    outline: none;
+
+    border-color: #555;
+}
+
+
+/* =========================
+   CREATE BUTTON
+========================= */
+
+.create-button {
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #222;
+
+    color: white;
+
+    cursor: pointer;
+
+    font: inherit;
+}
+
+
+.create-button:hover {
+    background: #333;
+}
+
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+#cancelEdit.cancel-button {
+    display: none;
+
+    margin-top: 20px;
+
+    margin-left: 8px;
+
+    padding: 12px 20px;
+
+    border:
+        1px solid #ccc !important;
+
+    border-radius:
+        8px !important;
+
+    background:
+        #eee !important;
+
+    color:
+        #222 !important;
+
+    cursor:
+        pointer;
+
+    font:
+        inherit;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+
+#cancelEdit.cancel-button:hover {
+    background:
+        #ddd !important;
+
+    border-color:
+        #999 !important;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.job-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.stat-card {
+    background: white;
+
+    border:
+        1px solid #ddd;
+
+    border-radius:
+        12px;
+
+    padding:
+        20px;
+}
+
+
+.stat-card h3 {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom:
+        10px;
+}
+
+
+.stat-card p {
+    font-size:
+        30px;
+
+    font-weight:
+        bold;
+}
+
+
+/* =========================
+   APPLICATIONS
+========================= */
+
+.applications-section {
+    background:
+        white;
+
+    border:
+        1px solid #ddd;
+
+    border-radius:
+        14px;
+
+    padding:
+        25px;
+}
+
+
+/* =========================
+   APPLICATION TOOLS
+========================= */
+
+.application-tools {
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr 220px;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        15px;
+}
+
+
+.application-tools input,
+.application-tools select {
+    padding:
+        11px 12px;
+
+    border:
+        1px solid #ccc;
+
+    border-radius:
+        7px;
+
+    font:
+        inherit;
+}
+
+
+/* =========================
+   FILTERS
+========================= */
+
+#jobFilters {
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+    margin-bottom:
+        20px;
+}
+
+
+#jobFilters button {
+    padding:
+        8px 13px;
+
+    border:
+        1px solid #ccc;
+
+    border-radius:
+        7px;
+
+    background:
+        white;
+
+    color:
+        #222;
+
+    cursor:
+        pointer;
+
+    font:
+        inherit;
+}
+
+
+#jobFilters button:hover {
+    background:
+        #f0f0f0;
+}
+
+
+/* =========================
+   JOB LIST
+========================= */
+
+#jobs {
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        12px;
+}
+
+
+.job-card {
+    border:
+        1px solid #ddd;
+
+    border-radius:
+        10px;
+
+    padding:
+        18px;
+
+    background:
+        #fafafa;
+}
+
+
+.job-card-header {
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        flex-start;
+
+    gap:
+        15px;
+}
+
+
+.job-card-title h3 {
+    font-size:
+        17px;
+
+    margin-bottom:
+        5px;
+}
+
+
+.job-card-title p {
+    color:
+        #777;
+
+    font-size:
+        13px;
+}
+
+
+.job-card-info {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    gap:
+        10px;
+
+    margin-top:
+        15px;
+}
+
+
+.job-info-item {
+    background:
+        white;
+
+    padding:
+        10px;
+
+    border-radius:
+        7px;
+}
+
+
+.job-info-item span {
+    display:
+        block;
+
+    font-size:
+        11px;
+
+    color:
+        #777;
+
+    margin-bottom:
+        4px;
+}
+
+
+.job-info-item strong {
+    font-size:
+        13px;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+========================================================= */
+
+.job-card-header .job-status {
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    min-width:
+        72px;
+
+    min-height:
+        26px;
+
+    padding:
+        5px 11px;
+
+    border-radius:
+        999px !important;
+
+    border:
+        1px solid transparent !important;
+
+    font-size:
+        11px;
+
+    font-weight:
+        700;
+
+    line-height:
+        1;
+
+    white-space:
+        nowrap;
+
+    opacity:
+        1 !important;
+
+    text-decoration:
+        none !important;
+}
+
+
+/* APPLIED */
+
+.job-card-header
+.job-status.status-applied {
+    background:
+        #dbeafe !important;
+
+    color:
+        #1d4ed8 !important;
+
+    border-color:
+        #bfdbfe !important;
+}
+
+
+/* UNDER REVIEW */
+
+.job-card-header
+.job-status.status-under-review {
+    background:
+        #fef3c7 !important;
+
+    color:
+        #92400e !important;
+
+    border-color:
+        #fde68a !important;
+}
+
+
+/* INTERVIEW */
+
+.job-card-header
+.job-status.status-interview {
+    background:
+        #ede9fe !important;
+
+    color:
+        #6d28d9 !important;
+
+    border-color:
+        #ddd6fe !important;
+}
+
+
+/* ASSESSMENT */
+
+.job-card-header
+.job-status.status-assessment {
+    background:
+        #e0f2fe !important;
+
+    color:
+        #0369a1 !important;
+
+    border-color:
+        #bae6fd !important;
+}
+
+
+/* OFFER */
+
+.job-card-header
+.job-status.status-offer {
+    background:
+        #dcfce7 !important;
+
+    color:
+        #15803d !important;
+
+    border-color:
+        #bbf7d0 !important;
+}
+
+
+/* REJECTED */
+
+.job-card-header
+.job-status.status-rejected {
+    background:
+        #fee2e2 !important;
+
+    color:
+        #b91c1c !important;
+
+    border-color:
+        #fecaca !important;
+}
+
+
+/* WITHDRAWN */
+
+.job-card-header
+.job-status.status-withdrawn {
+    background:
+        #e5e7eb !important;
+
+    color:
+        #374151 !important;
+
+    border-color:
+        #d1d5db !important;
+}
+
+
+/* =========================================================
+   PRIORITY
+========================================================= */
+
+.job-priority {
+    display:
+        inline-block;
+
+    font-size:
+        11px;
+
+    font-weight:
+        bold;
+
+    padding:
+        5px 9px;
+
+    border-radius:
+        999px;
+}
+
+
+.job-priority.high {
+    background:
+        #ffe0e0;
+
+    color:
+        #b00000;
+}
+
+
+.job-priority.medium {
+    background:
+        #fff0cc;
+
+    color:
+        #946000;
+}
+
+
+.job-priority.low {
+    background:
+        #dff2e5;
+
+    color:
+        #16733a;
+}
+
+
+/* =========================
+   JOB ACTIONS
+========================= */
+
+.job-actions {
+    display:
+        flex;
+
+    gap:
+        8px;
+
+    margin-top:
+        15px;
+}
+
+
+.job-actions button {
+    padding:
+        8px 12px;
+
+    border:
+        none;
+
+    border-radius:
+        7px;
+
+    cursor:
+        pointer;
+}
+
+
+.edit-job {
+    background:
+        #e9e9e9;
+}
+
+
+.delete-job {
+    background:
+        #eee;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    text-align:
+        center;
+
+    padding:
+        30px 10px;
+
+    color:
+        #888;
+}
+
+/* =========================================================
+   JOB TRACKER THEME BUTTONS
+========================================================= */
+
+
+/* All job tracker buttons */
+
+body.theme-light #jobs button,
+body.theme-dark #jobs button,
+body.theme-ocean #jobs button,
+body.theme-forest #jobs button,
+body.theme-purple #jobs button,
+body.theme-midnight #jobs button,
+
+body.theme-light .applications-section button,
+body.theme-dark .applications-section button,
+body.theme-ocean .applications-section button,
+body.theme-forest .applications-section button,
+body.theme-purple .applications-section button,
+body.theme-midnight .applications-section button {
+
+    background: var(--theme-surface-2) !important;
+
+    color: var(--theme-text) !important;
+
+    border: 1px solid var(--theme-border) !important;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+
+}
+
+
+/* Hover */
+
+body.theme-light #jobs button:hover,
+body.theme-dark #jobs button:hover,
+body.theme-ocean #jobs button:hover,
+body.theme-forest #jobs button:hover,
+body.theme-purple #jobs button:hover,
+body.theme-midnight #jobs button:hover,
+
+body.theme-light .applications-section button:hover,
+body.theme-dark .applications-section button:hover,
+body.theme-ocean .applications-section button:hover,
+body.theme-forest .applications-section button:hover,
+body.theme-purple .applications-section button:hover,
+body.theme-midnight .applications-section button:hover {
+
+    background: var(--theme-surface-3) !important;
+
+    border-color: var(--theme-accent) !important;
+
+}
+
+
+/* =========================================================
+   JOB TRACKER FILTER BUTTONS
+========================================================= */
+
+body.theme-light #jobFilters button,
+body.theme-dark #jobFilters button,
+body.theme-ocean #jobFilters button,
+body.theme-forest #jobFilters button,
+body.theme-purple #jobFilters button,
+body.theme-midnight #jobFilters button {
+
+    background: var(--theme-surface-2) !important;
+
+    color: var(--theme-text) !important;
+
+    border: 1px solid var(--theme-border) !important;
+
+}
+
+
+/* Active filter */
+
+body.theme-light #jobFilters button.active,
+body.theme-dark #jobFilters button.active,
+body.theme-ocean #jobFilters button.active,
+body.theme-forest #jobFilters button.active,
+body.theme-purple #jobFilters button.active,
+body.theme-midnight #jobFilters button.active {
+
+    background: var(--theme-accent) !important;
+
+    color: var(--theme-accent-text) !important;
+
+    border-color: var(--theme-accent) !important;
+
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+body.theme-light #jobs .edit-button,
+body.theme-dark #jobs .edit-button,
+body.theme-ocean #jobs .edit-button,
+body.theme-forest #jobs .edit-button,
+body.theme-purple #jobs .edit-button,
+body.theme-midnight #jobs .edit-button {
+
+    background: var(--theme-surface-2) !important;
+
+    color: var(--theme-text) !important;
+
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+body.theme-light #jobs .delete-button,
+body.theme-dark #jobs .delete-button,
+body.theme-ocean #jobs .delete-button,
+body.theme-forest #jobs .delete-button,
+body.theme-purple #jobs .delete-button,
+body.theme-midnight #jobs .delete-button {
+
+    background: var(--theme-surface-2) !important;
+
+    color: var(--theme-text) !important;
+
+}
+
+
+/* =========================================================
+   CANCEL EDIT BUTTON
+========================================================= */
+
+body.theme-light #cancelEdit,
+body.theme-dark #cancelEdit,
+body.theme-ocean #cancelEdit,
+body.theme-forest #cancelEdit,
+body.theme-purple #cancelEdit,
+body.theme-midnight #cancelEdit {
+
+    background: var(--theme-surface-2) !important;
+
+    color: var(--theme-text) !important;
+
+    border: 1px solid var(--theme-border) !important;
+
+}
+
+
+body.theme-light #cancelEdit:hover,
+body.theme-dark #cancelEdit:hover,
+body.theme-ocean #cancelEdit:hover,
+body.theme-forest #cancelEdit:hover,
+body.theme-purple #cancelEdit:hover,
+body.theme-midnight #cancelEdit:hover {
+
+    background: var(--theme-surface-3) !important;
+
+    border-color: var(--theme-accent) !important;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .job-stats {
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+    }
+
+
+    .form-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .input-group.full-width {
+        grid-column:
+            auto;
+    }
+
+
+    .job-card-info {
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .sidebar {
+        position:
+            static;
+
+        width:
+            100%;
+
+        min-height:
+            auto;
+    }
+
+
+    .app-layout {
+        display:
+            block;
+    }
+
+
+    .main-content {
+        margin-left:
+            0;
+
+        width:
+            100%;
+
+        padding:
+            20px;
+    }
+
+
+    .job-stats {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .application-tools {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .job-card-info {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .job-card-header {
+        flex-direction:
+            column;
+    }
+
+
+    #cancelEdit.cancel-button {
+        margin-left:
+            0;
+    }
+
+}

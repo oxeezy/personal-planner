@@ -1,0 +1,891 @@
+/* =========================================================
+   GLOBAL THEME VARIABLES
+========================================================= */
+
+body.theme-light {
+
+    --theme-bg: #f4f5f7;
+    --theme-surface: #ffffff;
+    --theme-surface-2: #fafafa;
+    --theme-surface-3: #eeeeee;
+    --theme-text: #222222;
+    --theme-muted: #777777;
+    --theme-border: #dddddd;
+    --theme-border-2: #eeeeee;
+    --theme-input: #ffffff;
+    --theme-accent: #222222;
+    --theme-accent-text: #ffffff;
+
+}
+
+
+body.theme-dark {
+
+    --theme-bg: #111111;
+    --theme-surface: #181818;
+    --theme-surface-2: #242424;
+    --theme-surface-3: #303030;
+    --theme-text: #eeeeee;
+    --theme-muted: #999999;
+    --theme-border: #2d2d2d;
+    --theme-border-2: #353535;
+    --theme-input: #242424;
+    --theme-accent: #333333;
+    --theme-accent-text: #ffffff;
+
+}
+
+
+body.theme-ocean {
+
+    --theme-bg: #eaf7fb;
+    --theme-surface: #ffffff;
+    --theme-surface-2: #f5fbfd;
+    --theme-surface-3: #dff2f7;
+    --theme-text: #16343d;
+    --theme-muted: #5e7882;
+    --theme-border: #c8e3e9;
+    --theme-border-2: #d8edf2;
+    --theme-input: #ffffff;
+    --theme-accent: #0f7085;
+    --theme-accent-text: #ffffff;
+
+}
+
+
+body.theme-forest {
+
+    --theme-bg: #edf5ef;
+    --theme-surface: #ffffff;
+    --theme-surface-2: #f7fbf8;
+    --theme-surface-3: #e1f0e5;
+    --theme-text: #1f3528;
+    --theme-muted: #66776c;
+    --theme-border: #d0e4d5;
+    --theme-border-2: #dcebdd;
+    --theme-input: #ffffff;
+    --theme-accent: #285943;
+    --theme-accent-text: #ffffff;
+
+}
+
+
+body.theme-purple {
+
+    --theme-bg: #f3effb;
+    --theme-surface: #ffffff;
+    --theme-surface-2: #faf8fd;
+    --theme-surface-3: #eee7f8;
+    --theme-text: #302342;
+    --theme-muted: #756783;
+    --theme-border: #ddd2ef;
+    --theme-border-2: #e7ddf2;
+    --theme-input: #ffffff;
+    --theme-accent: #5f3b8f;
+    --theme-accent-text: #ffffff;
+
+}
+
+
+body.theme-midnight {
+
+    --theme-bg: #0d1726;
+    --theme-surface: #142238;
+    --theme-surface-2: #1a2a41;
+    --theme-surface-3: #1c2b40;
+    --theme-text: #e8eef7;
+    --theme-muted: #9fb0c5;
+    --theme-border: #253957;
+    --theme-border-2: #2a3d5a;
+    --theme-input: #1a2a41;
+    --theme-accent: #243957;
+    --theme-accent-text: #ffffff;
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body.theme-light,
+body.theme-dark,
+body.theme-ocean,
+body.theme-forest,
+body.theme-purple,
+body.theme-midnight {
+
+    background:
+        var(--theme-bg);
+
+    color:
+        var(--theme-text);
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+body.theme-light .sidebar,
+body.theme-dark .sidebar,
+body.theme-ocean .sidebar,
+body.theme-forest .sidebar,
+body.theme-purple .sidebar,
+body.theme-midnight .sidebar {
+
+    background:
+        var(--theme-surface);
+
+    border-color:
+        var(--theme-border);
+
+}
+
+
+body.theme-ocean .sidebar {
+
+    background:
+        #0f4c5c;
+
+}
+
+
+body.theme-forest .sidebar {
+
+    background:
+        #285943;
+
+}
+
+
+body.theme-purple .sidebar {
+
+    background:
+        #5f3b8f;
+
+}
+
+
+body.theme-midnight .sidebar {
+
+    background:
+        #101c31;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+body.theme-light .nav-item {
+
+    color:
+        #555555;
+
+}
+
+
+body.theme-light .nav-item:hover,
+body.theme-light .nav-item.active {
+
+    background:
+        #eeeeee;
+
+    color:
+        #222222;
+
+}
+
+
+body.theme-dark .nav-item,
+body.theme-ocean .nav-item,
+body.theme-forest .nav-item,
+body.theme-purple .nav-item,
+body.theme-midnight .nav-item {
+
+    color:
+        #ffffff;
+
+}
+
+
+body.theme-dark .nav-item:hover,
+body.theme-dark .nav-item.active {
+
+    background:
+        #303030;
+
+}
+
+
+body.theme-ocean .nav-item:hover,
+body.theme-ocean .nav-item.active {
+
+    background:
+        #176a7d;
+
+}
+
+
+body.theme-forest .nav-item:hover,
+body.theme-forest .nav-item.active {
+
+    background:
+        #367454;
+
+}
+
+
+body.theme-purple .nav-item:hover,
+body.theme-purple .nav-item.active {
+
+    background:
+        #724caf;
+
+}
+
+
+body.theme-midnight .nav-item:hover,
+body.theme-midnight .nav-item.active {
+
+    background:
+        #1c2b40;
+
+}
+
+
+/* =========================================================
+   MAIN CARDS
+========================================================= */
+
+body.theme-dark .module-card,
+body.theme-dark .overview-card,
+body.theme-dark .side-panel,
+body.theme-dark .settings-card,
+body.theme-dark .create-section,
+body.theme-dark .tasks-section,
+body.theme-dark .job-form-card,
+body.theme-dark .applications-section,
+body.theme-dark .application-card,
+body.theme-dark .goal-card,
+body.theme-dark .goals-section,
+body.theme-dark .calendar-card,
+body.theme-dark .schedule-form-card,
+body.theme-dark .schedule-section {
+
+    background:
+        var(--theme-surface)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+    border-color:
+        var(--theme-border)
+        !important;
+
+}
+
+
+/* =========================================================
+   MIDNIGHT CARDS
+========================================================= */
+
+body.theme-midnight .module-card,
+body.theme-midnight .overview-card,
+body.theme-midnight .side-panel,
+body.theme-midnight .settings-card,
+body.theme-midnight .create-section,
+body.theme-midnight .tasks-section,
+body.theme-midnight .job-form-card,
+body.theme-midnight .applications-section,
+body.theme-midnight .application-card,
+body.theme-midnight .goal-card,
+body.theme-midnight .goals-section,
+body.theme-midnight .calendar-card,
+body.theme-midnight .schedule-form-card,
+body.theme-midnight .schedule-section {
+
+    background:
+        var(--theme-surface)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+    border-color:
+        var(--theme-border)
+        !important;
+
+}
+
+
+/* =========================================================
+   DARK FORM INPUTS
+========================================================= */
+
+body.theme-dark input,
+body.theme-dark select,
+body.theme-dark textarea,
+body.theme-midnight input,
+body.theme-midnight select,
+body.theme-midnight textarea {
+
+    background:
+        var(--theme-input)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+    border-color:
+        var(--theme-border-2)
+        !important;
+
+}
+
+
+body.theme-dark input::placeholder,
+body.theme-dark textarea::placeholder,
+body.theme-midnight input::placeholder,
+body.theme-midnight textarea::placeholder {
+
+    color:
+        #888888
+        !important;
+
+}
+
+
+/* =========================================================
+   PLANNER TASKS
+========================================================= */
+
+body.theme-dark #tasks > div,
+body.theme-midnight #tasks > div {
+
+    background:
+        var(--theme-surface)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+    border-color:
+        var(--theme-border-2)
+        !important;
+
+}
+
+
+body.theme-dark #tasks button,
+body.theme-midnight #tasks button {
+
+    background:
+        var(--theme-surface-2)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+    border-color:
+        var(--theme-border-2)
+        !important;
+
+}
+
+
+/* =========================================================
+   JOB TRACKER
+========================================================= */
+
+body.theme-dark #jobs > div,
+body.theme-midnight #jobs > div {
+
+    background:
+        var(--theme-surface)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+    border-color:
+        var(--theme-border-2)
+        !important;
+
+}
+
+
+body.theme-dark #jobs > div > div,
+body.theme-midnight #jobs > div > div {
+
+    background:
+        transparent
+        !important;
+
+}
+
+
+body.theme-dark #jobs [class*="info"],
+body.theme-dark #jobs [class*="meta"],
+body.theme-dark #jobs [class*="detail"],
+body.theme-midnight #jobs [class*="info"],
+body.theme-midnight #jobs [class*="meta"],
+body.theme-midnight #jobs [class*="detail"] {
+
+    background:
+        var(--theme-surface-2)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+}
+
+
+/* =========================================================
+   DASHBOARD SUMMARY
+========================================================= */
+
+body.theme-dark .planner-summary > div,
+body.theme-midnight .planner-summary > div {
+
+    background:
+        var(--theme-surface-2)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+    border-color:
+        var(--theme-border-2)
+        !important;
+
+}
+
+
+body.theme-dark .planner-summary strong,
+body.theme-midnight .planner-summary strong {
+
+    color:
+        #ffffff
+        !important;
+
+}
+
+
+/* =========================================================
+   DAILY PLANNER CALENDAR
+========================================================= */
+
+.calendar-controls h2 {
+
+    color:
+        var(--theme-text);
+
+}
+
+
+.calendar-controls button {
+
+    background:
+        var(--theme-surface);
+
+    color:
+        var(--theme-text);
+
+    border-color:
+        var(--theme-border);
+
+}
+
+
+.calendar-weekdays span {
+
+    color:
+        var(--theme-muted);
+
+}
+
+
+.calendar-day {
+
+    background:
+        var(--theme-surface);
+
+    color:
+        var(--theme-text);
+
+    border-color:
+        var(--theme-border-2);
+
+}
+
+
+.calendar-day.empty {
+
+    background:
+        var(--theme-surface-2);
+
+}
+
+
+.calendar-day:hover {
+
+    background:
+        var(--theme-surface-2);
+
+}
+
+
+.calendar-day.selected {
+
+    background:
+        var(--theme-surface-2);
+
+}
+
+
+/* =========================================================
+   DAILY PLANNER EVENT
+========================================================= */
+
+.calendar-event {
+
+    background:
+        var(--theme-surface-3);
+
+    color:
+        var(--theme-text);
+
+}
+
+
+.calendar-event-title {
+
+    color:
+        var(--theme-text);
+
+}
+
+
+.calendar-event-time {
+
+    color:
+        var(--theme-muted);
+
+}
+
+
+/* =========================================================
+   GOALS
+========================================================= */
+
+body.theme-dark .goal-card,
+body.theme-dark .goals-section,
+body.theme-midnight .goal-card,
+body.theme-midnight .goals-section {
+
+    background:
+        var(--theme-surface)
+        !important;
+
+}
+
+
+body.theme-dark .milestone,
+body.theme-dark .milestone-item,
+body.theme-midnight .milestone,
+body.theme-midnight .milestone-item {
+
+    background:
+        var(--theme-surface-2)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+}
+
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+body.theme-dark .theme-option,
+body.theme-dark .option-card,
+body.theme-dark .toggle-row,
+body.theme-dark .sub-setting,
+body.theme-midnight .theme-option,
+body.theme-midnight .option-card,
+body.theme-midnight .toggle-row,
+body.theme-midnight .sub-setting {
+
+    background:
+        var(--theme-surface-2)
+        !important;
+
+    color:
+        var(--theme-text)
+        !important;
+
+    border-color:
+        var(--theme-border-2)
+        !important;
+
+}
+
+
+/* =========================================================
+   CUSTOM BACKGROUND
+========================================================= */
+
+body.custom-background {
+
+    background-size:
+        cover;
+
+    background-position:
+        center;
+
+    background-repeat:
+        no-repeat;
+
+    background-attachment:
+        fixed;
+
+}
+
+/* =========================================================
+   FINAL PLANNER OVERRIDES
+   These MUST be at the very bottom of theme.css
+========================================================= */
+
+
+/* =========================================================
+   PLANNER HEADER
+========================================================= */
+
+body.theme-dark .header,
+body.theme-midnight .header {
+    background: var(--theme-surface) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border) !important;
+}
+
+body.theme-dark .header .logo,
+body.theme-midnight .header .logo {
+    color: var(--theme-text) !important;
+}
+
+
+/* =========================================================
+   PLANNER STAT CARDS
+========================================================= */
+
+body.theme-dark .stat-card,
+body.theme-midnight .stat-card,
+body.theme-ocean .stat-card,
+body.theme-forest .stat-card,
+body.theme-purple .stat-card {
+    background: var(--theme-surface-2) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border-2) !important;
+}
+
+
+/* Numbers */
+
+body.theme-dark .stat-card p,
+body.theme-midnight .stat-card p {
+    color: #ffffff !important;
+}
+
+
+/* Labels */
+
+body.theme-dark .stat-card h3,
+body.theme-midnight .stat-card h3 {
+    color: var(--theme-muted) !important;
+}
+
+
+/* =========================================================
+   PLANNER TASK CARDS
+========================================================= */
+
+/*
+   Do NOT depend on a specific task-card class.
+   #tasks > * catches whatever planner.js creates.
+*/
+
+body.theme-dark #tasks > *,
+body.theme-midnight #tasks > *,
+body.theme-ocean #tasks > *,
+body.theme-forest #tasks > *,
+body.theme-purple #tasks > * {
+    background: var(--theme-surface-2) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border-2) !important;
+}
+
+
+/* =========================================================
+   EVERYTHING INSIDE TASK CARDS
+========================================================= */
+
+body.theme-dark #tasks > * *,
+body.theme-midnight #tasks > * * {
+    color: inherit;
+}
+
+
+/* Task titles */
+
+body.theme-dark #tasks > * h1,
+body.theme-dark #tasks > * h2,
+body.theme-dark #tasks > * h3,
+body.theme-dark #tasks > * h4,
+body.theme-dark #tasks > * strong,
+body.theme-midnight #tasks > * h1,
+body.theme-midnight #tasks > * h2,
+body.theme-midnight #tasks > * h3,
+body.theme-midnight #tasks > * h4,
+body.theme-midnight #tasks > * strong {
+    color: #ffffff !important;
+}
+
+
+/* Description */
+
+body.theme-dark #tasks > * p,
+body.theme-dark #tasks > * small,
+body.theme-dark #tasks > * span,
+body.theme-midnight #tasks > * p,
+body.theme-midnight #tasks > * small,
+body.theme-midnight #tasks > * span {
+    color: var(--theme-muted) !important;
+}
+
+
+/* =========================================================
+   TASK CARD INNER BACKGROUNDS
+========================================================= */
+
+/*
+   Prevent old planner.css white inner sections
+   from showing through.
+*/
+
+body.theme-dark #tasks > * > div,
+body.theme-dark #tasks > * > section,
+body.theme-dark #tasks > * > article,
+
+body.theme-midnight #tasks > * > div,
+body.theme-midnight #tasks > * > section,
+body.theme-midnight #tasks > * > article {
+    background: transparent !important;
+}
+
+
+/* =========================================================
+   COMPLETED TASK
+========================================================= */
+
+body.theme-dark #tasks > *.completed,
+body.theme-dark #tasks > *[class*="completed"],
+body.theme-midnight #tasks > *.completed,
+body.theme-midnight #tasks > *[class*="completed"] {
+    background: #242424 !important;
+    color: #eeeeee !important;
+}
+
+
+/* =========================================================
+   TASK BUTTONS
+========================================================= */
+
+body.theme-dark #tasks > * button,
+body.theme-midnight #tasks > * button {
+    background: #1a2a41 !important;
+    color: #ffffff !important;
+    border: 1px solid #2f4668 !important;
+}
+
+body.theme-dark #tasks > * button:hover,
+body.theme-midnight #tasks > * button:hover {
+    background: #2b4162 !important;
+}
+
+
+/* =========================================================
+   TASK PRIORITY
+========================================================= */
+
+body.theme-dark #tasks > * [class*="priority"],
+body.theme-midnight #tasks > * [class*="priority"] {
+    background: #343434 !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   PLANNER SEARCH
+========================================================= */
+
+body.theme-dark #searchTask,
+body.theme-dark #sortTasks,
+body.theme-midnight #searchTask,
+body.theme-midnight #sortTasks {
+    background: var(--theme-input) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border-2) !important;
+}
+
+
+/* =========================================================
+   PLANNER FILTER BUTTONS
+========================================================= */
+
+body.theme-dark #taskFilters button,
+body.theme-midnight #taskFilters button {
+    background: var(--theme-surface-2) !important;
+    color: var(--theme-text) !important;
+    border-color: var(--theme-border-2) !important;
+}
+
+
+/* =========================================================
+   CREATE TASK BUTTON
+========================================================= */
+
+body.theme-dark .create-button,
+body.theme-midnight .create-button {
+    background: #242424 !important;
+    color: #ffffff !important;
+    border-color: #454545 !important;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+body.theme-dark #cancelEdit,
+body.theme-midnight #cancelEdit {
+    background: #242424 !important;
+    color: #ffffff !important;
+    border-color: #454545 !important;
+}
