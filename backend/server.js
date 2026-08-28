@@ -41,11 +41,13 @@ app.use(
 // SESSION
 // ================================================================
 
+app.set('trust proxy', 1);
+
 app.use(
     session({
 
         secret:
-            'my-secret-key',
+            process.env.SESSION_SECRET,
 
         resave:
             false,
@@ -59,10 +61,10 @@ app.use(
                 true,
 
             sameSite:
-                'lax',
+                'none',
 
             secure:
-                false,
+                true,
 
             maxAge:
                 1000 *
