@@ -277,7 +277,7 @@ function applySettings(settings) {
 function loadSettings() {
 
     fetch(
-        'http://127.0.0.1:3000/api/settings',
+        'https://personal-planner-yk5w.onrender.com/api/settings',
         {
             method: 'GET',
             credentials: 'include'
@@ -331,7 +331,7 @@ function loadSettings() {
 function loadDashboard() {
 
     fetch(
-        'http://127.0.0.1:3000/api/tasks',
+        'https://personal-planner-yk5w.onrender.com/api/tasks',
         {
             method: 'GET',
             credentials: 'include'
@@ -775,7 +775,7 @@ function loadDashboard() {
 function loadJobStats() {
 
     fetch(
-        'http://127.0.0.1:3000/api/jobs',
+        'https://personal-planner-yk5w.onrender.com/api/jobs',
         {
             method: 'GET',
             credentials: 'include'
@@ -966,7 +966,7 @@ function loadDailyPlanner() {
 
 
     fetch(
-        'http://127.0.0.1:3000/api/daily-plans',
+        'https://personal-planner-yk5w.onrender.com/api/daily-plans',
         {
             method: 'GET',
             credentials: 'include'
@@ -1133,7 +1133,7 @@ function loadGoals() {
 
 
     fetch(
-        'http://127.0.0.1:3000/api/goals',
+        'https://personal-planner-yk5w.onrender.com/api/goals',
         {
             method: 'GET',
             credentials: 'include'
@@ -1260,7 +1260,7 @@ function loadGoals() {
 
 
         return fetch(
-            `http://127.0.0.1:3000/api/goals/${goal.id}/milestones`,
+            `https://personal-planner-yk5w.onrender.com/api/goals/${goal.id}/milestones`,
             {
                 method: 'GET',
                 credentials: 'include'
