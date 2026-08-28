@@ -20,11 +20,11 @@ app.use(
     cors({
         origin: [
             'http://127.0.0.1:5500',
-            'http://127.0.0.1:8080'
+            'http://127.0.0.1:8080',
+            'http://192.168.100.6:8080'
         ],
 
-        credentials:
-            true
+        credentials: true
     })
 );
 
@@ -56,15 +56,11 @@ app.use(
             false,
 
         cookie: {
+            httpOnly: true,
 
-            httpOnly:
-                true,
+            sameSite: 'none',
 
-            sameSite:
-                'none',
-
-            secure:
-                true,
+            secure: true,
 
             maxAge:
                 1000 *
@@ -72,7 +68,6 @@ app.use(
                 60 *
                 24 *
                 7
-
         }
 
     })
