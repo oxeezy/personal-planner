@@ -175,12 +175,16 @@ app.get(
 // START SERVER
 // ================================================================
 
+const PORT =
+    process.env.PORT || 3000;
+
+
 app.listen(
-    3000,
+    PORT,
     () => {
 
         console.log(
-            'Server running on port 3000'
+            `Server running on port ${PORT}`
         );
 
     }
