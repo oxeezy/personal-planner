@@ -327,7 +327,7 @@ async function loadServerTheme() {
 
         const response =
             await fetch(
-                'http://127.0.0.1:3000/api/settings',
+                'https://personal-planner-yk5w.onrender.com/api/settings',
                 {
                     method: 'GET',
                     credentials: 'include'

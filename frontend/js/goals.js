@@ -44,7 +44,7 @@ addGoalButton.addEventListener('click', () => {
 function loadGoals() {
 
     fetch(
-        'http://127.0.0.1:3000/api/goals',
+        'https://personal-planner-yk5w.onrender.com/api/goals',
         {
             method: 'GET',
             credentials: 'include'
@@ -408,7 +408,7 @@ function renderGoal(goal) {
 
 
             fetch(
-                `http://127.0.0.1:3000/api/goals/${goal.id}`,
+                `https://personal-planner-yk5w.onrender.com/api/goals/${goal.id}`,
                 {
                     method: 'DELETE',
                     credentials: 'include'
@@ -543,7 +543,7 @@ function renderGoal(goal) {
 
 
             fetch(
-                `http://127.0.0.1:3000/api/goals/${goal.id}/milestones`,
+                `https://personal-planner-yk5w.onrender.com/api/goals/${goal.id}/milestones`,
                 {
                     method: 'POST',
 
@@ -628,7 +628,7 @@ function loadMilestones(
 ) {
 
     fetch(
-        `http://127.0.0.1:3000/api/goals/${goalId}/milestones`,
+        `https://personal-planner-yk5w.onrender.com/api/goals/${goalId}/milestones`,
         {
             method: 'GET',
             credentials: 'include'
@@ -825,7 +825,7 @@ function loadMilestones(
 
 
                         fetch(
-                            `http://127.0.0.1:3000/api/goals/${goalId}/milestones/${milestone.id}`,
+                            `https://personal-planner-yk5w.onrender.com/api/goals/${goalId}/milestones/${milestone.id}`,
                             {
                                 method: 'PATCH',
 
@@ -912,7 +912,7 @@ function loadMilestones(
 
 
                         fetch(
-                            `http://127.0.0.1:3000/api/goals/${goalId}/milestones/${milestone.id}`,
+                            `https://personal-planner-yk5w.onrender.com/api/goals/${goalId}/milestones/${milestone.id}`,
                             {
                                 method: 'DELETE',
                                 credentials: 'include'
@@ -1000,7 +1000,7 @@ function toggleMilestone(
     // ==================================================
 
     fetch(
-        `http://127.0.0.1:3000/api/goals/${goalId}/milestones/${milestoneId}`,
+        `https://personal-planner-yk5w.onrender.com/api/goals/${goalId}/milestones/${milestoneId}`,
         {
             method: 'PUT',
 
@@ -1044,7 +1044,7 @@ function toggleMilestone(
         // ==================================================
 
         return fetch(
-            `http://127.0.0.1:3000/api/goals/${goalId}/milestones`,
+            `https://personal-planner-yk5w.onrender.com/api/goals/${goalId}/milestones`,
             {
                 method: 'GET',
                 credentials: 'include'
@@ -1112,7 +1112,7 @@ function toggleMilestone(
         // ==================================================
 
         return fetch(
-            `http://127.0.0.1:3000/api/goals/${goalId}/progress`,
+            `https://personal-planner-yk5w.onrender.com/api/goals/${goalId}/progress`,
             {
                 method: 'PUT',
 
@@ -1260,7 +1260,7 @@ goalForm.addEventListener(
         // ==================================================
 
         let url =
-            'http://127.0.0.1:3000/api/goals';
+            'https://personal-planner-yk5w.onrender.com/api/goals';
 
         let method =
             'POST';
@@ -1271,7 +1271,7 @@ goalForm.addEventListener(
         ) {
 
             url =
-                `http://127.0.0.1:3000/api/goals/${goalID}`;
+                `https://personal-planner-yk5w.onrender.com/api/goals/${goalID}`;
 
             method =
                 'PUT';

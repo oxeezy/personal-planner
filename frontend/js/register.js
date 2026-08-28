@@ -13,7 +13,7 @@ async function checkExistingSession() {
 
         const response =
             await fetch(
-                'http://127.0.0.1:3000/api/users/me',
+                'https://personal-planner-yk5w.onrender.com/api/users/me',
                 {
                     method: 'GET',
                     credentials: 'include'
@@ -207,7 +207,7 @@ registerForm.addEventListener(
 
             const response =
                 await fetch(
-                    'http://127.0.0.1:3000/api/users/register',
+                    'https://personal-planner-yk5w.onrender.com/api/users/register',
                     {
                         method: 'POST',
 

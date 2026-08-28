@@ -1375,7 +1375,7 @@ async function loadSchedules() {
 
         const response =
             await fetch(
-                'http://127.0.0.1:3000/api/daily-plans',
+                'https://personal-planner-yk5w.onrender.com/api/daily-plans',
                 {
                     method: 'GET',
                     credentials: 'include'
@@ -1902,7 +1902,7 @@ function renderScheduleList(
 
                         const response =
                             await fetch(
-                                `http://127.0.0.1:3000/api/daily-plans/${schedule.id}`,
+                                `https://personal-planner-yk5w.onrender.com/api/daily-plans/${schedule.id}`,
                                 {
                                     method: 'DELETE',
                                     credentials: 'include'
@@ -2226,8 +2226,8 @@ scheduleForm.addEventListener(
 
         const url =
             scheduleID
-                ? `http://127.0.0.1:3000/api/daily-plans/${scheduleID}`
-                : 'http://127.0.0.1:3000/api/daily-plans';
+                ? `https://personal-planner-yk5w.onrender.com/api/daily-plans/${scheduleID}`
+                : 'https://personal-planner-yk5w.onrender.com/api/daily-plans';
 
 
         const method =

@@ -517,8 +517,8 @@ jobForm.addEventListener(
 
         const url =
             jobID
-                ? `http://127.0.0.1:3000/api/jobs/${jobID}`
-                : 'http://127.0.0.1:3000/api/jobs';
+                ? `https://personal-planner-yk5w.onrender.com/api/jobs/${jobID}`
+                : 'https://personal-planner-yk5w.onrender.com/api/jobs';
 
 
         const method =
@@ -608,7 +608,7 @@ async function displayJobs() {
 
         const response =
             await fetch(
-                'http://127.0.0.1:3000/api/jobs',
+                'https://personal-planner-yk5w.onrender.com/api/jobs',
                 {
                     method: 'GET',
                     credentials: 'include'
@@ -1523,7 +1523,7 @@ async function displayJobs() {
 
                             const response =
                                 await fetch(
-                                    `http://127.0.0.1:3000/api/jobs/${job.id}`,
+                                    `https://personal-planner-yk5w.onrender.com/api/jobs/${job.id}`,
                                     {
                                         method: 'DELETE',
                                         credentials: 'include'

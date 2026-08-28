@@ -42,7 +42,7 @@ sortTasks.addEventListener('change', () => {
 function displayTask() {
 
 
-    fetch('http://127.0.0.1:3000/api/tasks', {
+    fetch('https://personal-planner-yk5w.onrender.com/api/tasks', {
         method: 'GET',
         credentials: 'include'
     })
@@ -259,7 +259,7 @@ function displayTask() {
 
                 completeButton.addEventListener('click', () => {
 
-                    fetch(`http://127.0.0.1:3000/api/tasks/${task.id}/complete`, {
+                    fetch(`https://personal-planner-yk5w.onrender.com/api/tasks/${task.id}/complete`, {
                         method: 'PUT',
                         credentials: 'include'
                     })
@@ -326,7 +326,7 @@ function displayTask() {
                         return;
                     }
 
-                    fetch(`http://127.0.0.1:3000/api/tasks/${task.id}`, {
+                    fetch(`https://personal-planner-yk5w.onrender.com/api/tasks/${task.id}`, {
                         method: 'DELETE', 
                         credentials: 'include'
                     })
@@ -459,7 +459,7 @@ taskForm.addEventListener('submit', (event) => {
 
 
     if (taskID) {
-     fetch(`http://127.0.0.1:3000/api/tasks/${taskID}`, {
+     fetch(`https://personal-planner-yk5w.onrender.com/api/tasks/${taskID}`, {
         method: 'PUT',
         credentials: 'include',
 
@@ -504,7 +504,7 @@ taskForm.addEventListener('submit', (event) => {
             });
 
     } else {
-            fetch('http://127.0.0.1:3000/api/tasks', {
+            fetch('https://personal-planner-yk5w.onrender.com/api/tasks', {
             method: 'POST',
             credentials: 'include',
 
@@ -545,7 +545,7 @@ logout.addEventListener('click', () => {
 
     console.log('LOGOUT BUTTON CLICKED');
 
-    fetch('http://127.0.0.1:3000/api/users/logout', {
+    fetch('https://personal-planner-yk5w.onrender.com/api/users/logout', {
         method: 'POST',
         credentials: 'include'
     })
