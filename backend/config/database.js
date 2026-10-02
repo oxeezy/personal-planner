@@ -33,10 +33,10 @@ else if (process.env.DB_SSL_CA) {
 
 
 // ============================================================
-// DATABASE CONNECTION
+// DATABASE CONNECTION POOL
 // ============================================================
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
 
     host:
         process.env.DB_HOST,
@@ -53,7 +53,13 @@ const db = mysql.createConnection({
     database:
         process.env.DB_NAME,
 
-    ssl
+    ssl,
+
+    waitForConnections: true,
+
+    connectionLimit: 10,
+
+    queueLimit: 0
 
 });
 
@@ -62,7 +68,7 @@ const db = mysql.createConnection({
 // DATABASE CONNECTION TEST
 // ============================================================
 
-db.connect((error) => {
+db.getConnection((error, connection) => {
 
     if (error) {
 
@@ -81,6 +87,8 @@ db.connect((error) => {
     console.log(
         'Database connected successfully'
     );
+
+    connection.release();
 
 });
 
